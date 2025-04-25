@@ -1,13 +1,15 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const Formulario = ({ adicionarTarefa }) => {
     const [texto, setTexto] = useState('');
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!texto.trim()) return;
         adicionarTarefa(texto);
         setTexto('');
     };
+
     return (
         <form onSubmit={handleSubmit} className="mb-3 d-flex gap-2">
             <input
@@ -22,4 +24,4 @@ const Formulario = ({ adicionarTarefa }) => {
     );
 };
 
-export default Formulario
+export default Formulario;
